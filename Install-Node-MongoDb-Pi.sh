@@ -4,29 +4,44 @@
 #This will work specifically for a RaspberryPi 2 ARM7.
 #Willi's code installed a old version of NodeJS
 #First, Creates directory for downloads, and downloads node 4.2.4
-cd ~/ && mkdir temp && cd temp && wget https://nodejs.org/dist/latest/node-v4.2.4-linux-armv7l.tar.gz;
-tar -xzf node-v4.2.4-linux-armv7l.tar.gz;
-cd node-v4.0.0-linux-armv6l;
-./configure;
-make;
-sudo make install;
+cd ~/ && mkdir temp && cd temp && wget https://nodejs.org/dist/latest-v5.x/node-v5.3.0-linux-armv7l.tar.gz;
+tar -xzf node-v5.3.0-linux-armv7l.tar.gz;
+#Remove the tar after extracing it.
+sudo rm node-v5.3.0-linux-armv7l.tar.gz;
 #This next line will copy Node over to the appropriate folder.
-sudo cp -R * /usr/local/;
-cd ..;
+sudo mv node-v5.3.0-linux-armv7l.tar.gz/ /opt/nodejs/;
+#This line will remove the nodeJs we downloaded.
+sudo rm -R node-v5.3.0-linux-armv7l.tar.gz/ && sudo rmdir node-v5.3.0-linux-armv7l.tar.gz/;
+#Create symlinks to node && npm
+sudo ln -s /opt/nodejs/bin/node /usr/bin/node;
+sudo ln -s /opt/nodejs/bin/node /usr/sbin/node;
+sudo ln -s /opt/nodejs/bin/node /sbin/node;
+sudo ln -s /opt/nodejs/bin/npm /usr/bin/npm;
+sudo ln -s /opt/nodejs/bin/npm /usr/sbin/npm;
+sudo ln -s /opt/nodejs/bin/npm /sbin/npm;
 #Installation of git.
 sudo apt-get -y install git;
 #Installation of MongoDB by downloading binaries, and compiling.
-git clone https://github.com/skrabban/mongo-nonx86;
+git clone git://github.com/RickP/mongopi.git;
+cd mongopi;
+scons;
+sudo scons --prefix=/opt/mongo install;
+scons -c;
+ 
 #Download the dependencies to install mongoDB on R-Pi2
 sudo apt-get install -y scons build-essential libboost-filesystem-dev libboost-program-options-dev libboost-system-dev libboost-thread-dev libboost-all-dev;
-cd mongo-nonx86;
+cd mongo-nonx86; 
 #SCons will build the binaries appropriate to the Pi.
 scons;
-#Here is the install of MongoDB
+#Here is the install of MongoDB wih SCons.
 sudo scons --prefix=/opt/mongo install;
+#SCons -c cleans up unwanted files.
+scons -c;
 #Creation of a path variable into the envoirnment
+sudo su;
 echo "PATH=$PATH:/opt/mongo/bin/" >> /etc/enviornment;
 echo "export PATH" >> /etc/enviornment;
+su pi;
 #add a new mongodb user
 sudo useradd mongodb;
 sudo mkdir /var/lib/mongodb;
