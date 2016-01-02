@@ -37,6 +37,9 @@ sudo su;
 echo "PATH=$PATH:/opt/mongo/bin/" >> /etc/enviornment;
 echo "export PATH" >> /etc/enviornment;
 su pi;
+#simlink mongo for shell access:
+sudo ln -s /opt/mongo/bin/mongo /usr/bin/mongo;
+sudo ln -s /opt/mongo/bin/mongoinfo /usr/bin/mongoinfo;
 #add a new mongodb user
 sudo useradd mongodb;
 sudo mkdir /var/lib/mongodb;
