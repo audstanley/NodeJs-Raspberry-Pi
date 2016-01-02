@@ -12,5 +12,5 @@ going into you Raspberry Pi 2 terminal, and running: <p><code>
 After the install you can control mongodb anywhere on the system with:<p>
 <code>$sudo service mongodb start|stop|restart</code>
 <p>
-Please note that this is SPECIFICALLY for the raspberry pi 2, as NodeJS has a compiles ARM7 version available.  If you have an older Raspberry Pi, just change eveywhere in the script that says, "arm7" wih "arm6"
+Please note that this is SPECIFICALLY for the raspberry pi 2, as NodeJS has a compiles ARM7 version available.  If you have an older Raspberry Pi, just change eveywhere in the shell script (Node-MongoDb-Pi.sh) that says, "arm7" with "arm6"
  
