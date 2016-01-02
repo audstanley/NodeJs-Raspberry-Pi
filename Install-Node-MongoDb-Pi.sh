@@ -11,7 +11,7 @@ sudo rm node-v5.3.0-linux-armv7l.tar.gz;
 #This next line will copy Node over to the appropriate folder.
 sudo mv node-v5.3.0-linux-armv7l.tar.gz/ /opt/nodejs/;
 #This line will remove the nodeJs we downloaded.
-sudo rm -R node-v5.3.0-linux-armv7l.tar.gz/ && sudo rmdir node-v5.3.0-linux-armv7l.tar.gz/;
+sudo rm -R node-v5.3.0-linux-armv7l.tar.gz/* && sudo rmdir node-v5.3.0-linux-armv7l.tar.gz/;
 #Create symlinks to node && npm
 sudo ln -s /opt/nodejs/bin/node /usr/bin/node;
 sudo ln -s /opt/nodejs/bin/node /usr/sbin/node;
