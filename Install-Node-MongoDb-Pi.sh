@@ -23,14 +23,9 @@ sudo ln -s /opt/nodejs/bin/npm /sbin/npm;
 sudo apt-get -y install git;
 #Installation of MongoDB by downloading binaries, and compiling.
 git clone git://github.com/RickP/mongopi.git;
-cd mongopi;
-scons;
-sudo scons --prefix=/opt/mongo install;
-scons -c;
- 
 #Download the dependencies to install mongoDB on R-Pi2
 sudo apt-get install -y scons build-essential libboost-filesystem-dev libboost-program-options-dev libboost-system-dev libboost-thread-dev libboost-all-dev;
-cd mongo-nonx86; 
+cd mongopi;
 #SCons will build the binaries appropriate to the Pi.
 scons;
 #Here is the install of MongoDB wih SCons.
@@ -57,4 +52,4 @@ sudo chmod +x mongodb;
 sudo update-rc.d mongodb defaults;
 #finally, start mongoDB after all the installations are finished.
 sudo service mongodb start;
-#This whole process should take many hours.  Go get a coffee, or do this before going to bed.
+#This whole process should take six hours on the raspberry pi 2.  Go get a coffee, or do this before going to bed.
