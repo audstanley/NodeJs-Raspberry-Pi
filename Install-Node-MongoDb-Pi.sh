@@ -3,7 +3,9 @@
 #Special Thanks to Willi Thiel @ https://ni-c.github.io/heimcontrol.js/get-started.html
 #This will work specifically for a RaspberryPi 2 ARM7.
 #Willi's code installed a old version of NodeJS
-#First, Creates directory for downloads, and downloads node 4.2.4
+#First, Installation of git.
+sudo apt-get -y install git;
+#Next, Creates directory for downloads, and downloads node 4.2.4
 cd ~/ && mkdir temp && cd temp && wget https://nodejs.org/dist/latest-v5.x/node-v5.3.0-linux-armv7l.tar.gz;
 tar -xzf node-v5.3.0-linux-armv7l.tar.gz;
 #Remove the tar after extracing it.
@@ -19,8 +21,6 @@ sudo ln -s /opt/nodejs/bin/node /sbin/node;
 sudo ln -s /opt/nodejs/bin/npm /usr/bin/npm;
 sudo ln -s /opt/nodejs/bin/npm /usr/sbin/npm;
 sudo ln -s /opt/nodejs/bin/npm /sbin/npm;
-#Installation of git.
-sudo apt-get -y install git;
 #Installation of MongoDB by downloading binaries, and compiling.
 git clone git://github.com/RickP/mongopi.git;
 #Download the dependencies to install mongoDB on R-Pi2
