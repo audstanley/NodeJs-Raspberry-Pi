@@ -7,7 +7,7 @@ You can install everything on your pi by:<p>
 going into you Raspberry Pi 2 terminal, and running: <p><code>
  $git clone git://github.com/audstanley/Node-MongoDb-Pi; <p>
  $cd Node-MongoDb-Pi; <p>
- $sudo bash Install-Node-MongoDb-Pi-sh <p> </code>
+ $sudo bash Install-Node-MongoDb-Pi-sh; <p> </code>
 After the install you can control mongodb anywhere on the system with:<p>
 $sudo service mongodb start|stop|restart
 <p>
