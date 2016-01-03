@@ -11,16 +11,18 @@ tar -xzf node-v5.3.0-linux-armv7l.tar.gz;
 #Remove the tar after extracing it.
 sudo rm node-v5.3.0-linux-armv7l.tar.gz;
 #This next line will copy Node over to the appropriate folder.
-sudo mv node-v5.3.0-linux-armv7l.tar.gz/ /opt/nodejs/;
+sudo mv node-v5.3.0-linux-armv7l/ /opt/nodejs/;
 #This line will remove the nodeJs we downloaded.
 sudo rm -R node-v5.3.0-linux-armv7l.tar.gz/* && sudo rmdir node-v5.3.0-linux-armv7l.tar.gz/;
 #Create symlinks to node && npm
 sudo ln -s /opt/nodejs/bin/node /usr/bin/node;
 sudo ln -s /opt/nodejs/bin/node /usr/sbin/node;
 sudo ln -s /opt/nodejs/bin/node /sbin/node;
+sudo ln -s /opt/nodejs/bin/node /usr/local/bin/node;
 sudo ln -s /opt/nodejs/bin/npm /usr/bin/npm;
 sudo ln -s /opt/nodejs/bin/npm /usr/sbin/npm;
 sudo ln -s /opt/nodejs/bin/npm /sbin/npm;
+sudo ln -s /opt/nodejs/bin/npm /usr/local/bin/npm;
 #Installation of MongoDB by downloading binaries, and compiling.
 git clone git://github.com/RickP/mongopi.git;
 #Download the dependencies to install mongoDB on R-Pi2
