@@ -5,15 +5,15 @@
 #Willi's code installed a old version of NodeJS
 #First, Installation of git.
 sudo apt-get -y install git;
-#Next, Creates directory for downloads, and downloads node 4.2.4
-cd ~/ && mkdir temp && cd temp && wget https://nodejs.org/dist/latest-v5.x/node-v5.4.1-linux-armv7l.tar.gz;
-tar -xzf node-v5.4.1-linux-armv7l.tar.gz;
+#Next, Creates directory for downloads, and downloads node 5.5.0
+cd ~/ && mkdir temp && cd temp && wget https://nodejs.org/dist/latest-v5.x/node-v5.5.0-linux-armv7l.tar.gz;
+tar -xzf node-v5.5.0-linux-armv7l.tar.gz;
 #Remove the tar after extracing it.
-sudo rm node-v5.4.1-linux-armv7l.tar.gz;
+sudo rm node-v5.5.0-linux-armv7l.tar.gz;
 #This next line will copy Node over to the appropriate folder.
-sudo mv node-v5.4.1-linux-armv7l/ /opt/nodejs/;
+sudo mv node-v5.5.0-linux-armv7l/ /opt/nodejs/;
 #This line will remove the nodeJs we downloaded.
-sudo rm -R node-v5.4.1-linux-armv7l.tar.gz/* && sudo rmdir node-v5.4.1-linux-armv7l.tar.gz/;
+sudo rm -R node-v5.5.0-linux-armv7l.tar.gz/* && sudo rmdir node-v5.5.0-linux-armv7l.tar.gz/;
 #Create symlinks to node && npm
 sudo ln -s /opt/nodejs/bin/node /usr/bin/node;
 sudo ln -s /opt/nodejs/bin/node /usr/sbin/node;
