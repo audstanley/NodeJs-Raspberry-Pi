@@ -13,9 +13,9 @@ tar -xzf $LINKTONODE;
 #Remove the tar after extracing it.
 rm $LINKTONODE;
 #This next line will copy Node over to the appropriate folder.
-mv $NODEFOLDER /opt/nodejs/;
-#This line will remove the nodeJs we downloaded.
-rm -R $LINKTONODE/* && sudo rmdir $LINKTONODE/;
+mv /root/tempNode/$NODEFOLDER /opt/nodejs/;
+#This line will remove the nodeJs tar we downloaded.
+rm -R /root/tempNode/$LINKTONODE/* && sudo rmdir /root/tempNode/$LINKTONODE/;
 #Create symlinks to node && npm
 sudo ln -s /opt/nodejs/bin/node /usr/bin/node;
 sudo ln -s /opt/nodejs/bin/node /usr/sbin/node;
