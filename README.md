@@ -12,6 +12,6 @@ node -v;
 ```
 <p> 
 
-Please note that this is for the raspberry pi zero|1|2|3 ARM6 or ARM7.
+Please note that this should work for EVERY raspberry pi.
 
 As new integer versions of NodeJs come out, I will update the script.
