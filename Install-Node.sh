@@ -17,13 +17,13 @@ mv $NODEFOLDER /opt/nodejs/;
 #This line will remove the nodeJs we downloaded.
 rm -R $LINKTONODE/* && sudo rmdir $LINKTONODE/;
 #Create symlinks to node && npm
-ln -s /opt/nodejs/bin/node /usr/bin/node;
-ln -s /opt/nodejs/bin/node /usr/sbin/node;
-ln -s /opt/nodejs/bin/node /sbin/node;
-ln -s /opt/nodejs/bin/node /usr/local/bin/node;
-ln -s /opt/nodejs/bin/npm /usr/bin/npm;
-ln -s /opt/nodejs/bin/npm /usr/sbin/npm;
-ln -s /opt/nodejs/bin/npm /sbin/npm;
-ln -s /opt/nodejs/bin/npm /usr/local/bin/npm;
+sudo ln -s /opt/nodejs/bin/node /usr/bin/node;
+sudo ln -s /opt/nodejs/bin/node /usr/sbin/node;
+sudo ln -s /opt/nodejs/bin/node /sbin/node;
+sudo ln -s /opt/nodejs/bin/node /usr/local/bin/node;
+sudo ln -s /opt/nodejs/bin/npm /usr/bin/npm;
+sudo ln -s /opt/nodejs/bin/npm /usr/sbin/npm;
+sudo ln -s /opt/nodejs/bin/npm /sbin/npm;
+sudo ln -s /opt/nodejs/bin/npm /usr/local/bin/npm;
 rm -R /root/tempNode/* && rmdir /root/tempNode/;
 fi
