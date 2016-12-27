@@ -25,4 +25,5 @@ ln -s /opt/nodejs/bin/npm /usr/bin/npm;
 ln -s /opt/nodejs/bin/npm /usr/sbin/npm;
 ln -s /opt/nodejs/bin/npm /sbin/npm;
 ln -s /opt/nodejs/bin/npm /usr/local/bin/npm;
-cd ../.. && rm -R tempNode/* && rmdir tempNode/;
+rm -R /root/tempNode/* && rmdir /root/tempNode/;
+fi
