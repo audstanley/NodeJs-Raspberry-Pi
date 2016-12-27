@@ -12,6 +12,8 @@ cd ~/ && mkdir tempNode && cd tempNode && wget https://nodejs.org/dist/latest-v7
 tar -xzf $LINKTONODE;
 #Remove the tar after extracing it.
 rm $LINKTONODE;
+#remove older version of node:
+rm -R /opt/nodejs/* && rmdir /opt/nodejs/
 #This next line will copy Node over to the appropriate folder.
 mv /root/tempNode/$NODEFOLDER /opt/nodejs/;
 #This line will remove the nodeJs tar we downloaded.
