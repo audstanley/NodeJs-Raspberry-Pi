@@ -30,6 +30,6 @@ sudo ln -s /opt/nodejs/bin/npm /usr/sbin/npm;
 sudo ln -s /opt/nodejs/bin/npm /sbin/npm;
 sudo ln -s /opt/nodejs/bin/npm /usr/local/bin/npm;
 rm -R /root/tempNode/;
-su pi;
-cd ~/ && rm -R NodeJs-Raspberry-Pi-Arm7/;
+#su pi;
+#cd ~/ && rm -R NodeJs-Raspberry-Pi-Arm7/;
 fi
