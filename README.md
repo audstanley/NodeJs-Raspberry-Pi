@@ -3,8 +3,8 @@ This is a simple shell script that will install NodeJs v7.x.  The "Latest versio
 You can install everything on your pi by going into you Raspberry Pi zero/1/2/3's terminal, and running: <p>
 ```sh
 sudo apt-get install git;
-git clone https://github.com/audstanley/NodeJs-Raspberry-Pi-Arm7;
-cd NodeJs-Raspberry-Pi-Arm7;
+git clone https://github.com/audstanley/NodeJs-Raspberry-Pi;
+cd NodeJs-Raspberry-Pi;
 chmod +x Install-Node.sh;
 sudo ./Install-Node.sh;
 echo "done installing node";
