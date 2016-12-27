@@ -9,7 +9,7 @@ git clone https://github.com/audstanley/NodeJs-Raspberry-Pi-Arm7;
 cd NodeJs-Raspberry-Pi-Arm7;
 chmod +x Install-Node.sh;
 sudo ./Install-Node.sh;
-
+echo "done installing node";
 ```
 <p> 
 
