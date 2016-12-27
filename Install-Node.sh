@@ -13,13 +13,13 @@ tar -xzf $LINKTONODE;
 #Remove the tar after extracing it.
 rm $LINKTONODE;
 #remove older version of node:
-rm -R /opt/nodejs/* && rmdir /opt/nodejs/ 
+rm -R /opt/nodejs/;
 #remove symlinks
 rm /usr/bin/node /usr/sbin/node /sbin/node /sbin/node /usr/local/bin/node /usr/bin/npm /usr/sbin/npm /sbin/npm /usr/local/bin/npm;
 #This next line will copy Node over to the appropriate folder.
 mv /root/tempNode/$NODEFOLDER /opt/nodejs/;
 #This line will remove the nodeJs tar we downloaded.
-rm -R /root/tempNode/$LINKTONODE/* && sudo rmdir /root/tempNode/$LINKTONODE/;
+rm -R /root/tempNode/$LINKTONODE/;
 #Create symlinks to node && npm
 sudo ln -s /opt/nodejs/bin/node /usr/bin/node;
 sudo ln -s /opt/nodejs/bin/node /usr/sbin/node;
@@ -29,5 +29,7 @@ sudo ln -s /opt/nodejs/bin/npm /usr/bin/npm;
 sudo ln -s /opt/nodejs/bin/npm /usr/sbin/npm;
 sudo ln -s /opt/nodejs/bin/npm /sbin/npm;
 sudo ln -s /opt/nodejs/bin/npm /usr/local/bin/npm;
-rm -R /root/tempNode/* && rmdir /root/tempNode/;
+rm -R /root/tempNode/;
+su pi;
+cd ~/ && rm -R NodeJs-Raspberry-Pi-Arm7/;
 fi
