@@ -7,7 +7,8 @@ going into you Raspberry Pi 2 terminal, and running: <p>
 sudo apt-get install git;
 git clone https://github.com/audstanley/NodeJs-Raspberry-Pi-Arm7;
 cd NodeJs-Raspberry-Pi-Arm7;
-sudo bash Install-Node.sh; 
+chmod +x Install-Node.sh
+sudo ./Install-Node.sh; 
 ```
 <p> 
 
