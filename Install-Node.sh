@@ -5,7 +5,7 @@ NODEFOLDER=$(echo $LINKTONODE | sed 's/.tar.gz/\//')
 #Shell script created by @audstanley
 #This will work specifically for a RaspberryPi 2/3 ARM7.
 #Next, Creates directory for downloads, and downloads node 7.x
-cd ~/ && mkdir temp && cd temp && wget https://nodejs.org/dist/latest-v7.x/$LINKTONODE
+cd ~/ && mkdir tempNode && cd tempNode && wget https://nodejs.org/dist/latest-v7.x/$LINKTONODE
 tar -xzf $LINKTONODE;
 #Remove the tar after extracing it.
 sudo rm $LINKTONODE;
@@ -22,3 +22,4 @@ sudo ln -s /opt/nodejs/bin/npm /usr/bin/npm;
 sudo ln -s /opt/nodejs/bin/npm /usr/sbin/npm;
 sudo ln -s /opt/nodejs/bin/npm /sbin/npm;
 sudo ln -s /opt/nodejs/bin/npm /usr/local/bin/npm;
+cd ../.. && rm -R tempNode/* && rmdir tempNode/
