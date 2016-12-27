@@ -7,7 +7,8 @@ git clone https://github.com/audstanley/NodeJs-Raspberry-Pi;
 cd NodeJs-Raspberry-Pi;
 chmod +x Install-Node.sh;
 sudo ./Install-Node.sh;
-echo "done installing node";
+cd .. && rm -R NodeJs-Raspberry-Pi/;
+node -v;
 ```
 <p> 
 
