@@ -3,10 +3,13 @@ This is a simple shell script that will install NodeJs v7.x.  The "Latest versio
 The script will then compile the MongoDB binary, and the process will take about four to five hours.
 You can install everything on your pi by:<p>
 going into you Raspberry Pi 2 terminal, and running: <p>
- <code>sudo apt-get install git;
+```sh
+sudo apt-get install git;
 git clone https://github.com/audstanley/NodeJs-Raspberry-Pi-Arm7;
 cd NodeJs-Raspberry-Pi-Arm7;
-sudo bash Install-Node-MongoDb-Pi-sh; </code><p> 
+sudo bash Install-Node-MongoDb-Pi-sh; 
+```
+<p> 
 
 Please note that this is SPECIFICALLY for the raspberry pi 2/3 which run on an ARM7.
 
