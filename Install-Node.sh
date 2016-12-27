@@ -1,8 +1,9 @@
 #!/bin/bash
+PICHIP=$(uname -m);
 if [ "$EUID" -ne 0 ]
         then echo "You need to install as root by using sudo ./Install-Node.sh";
         exit
-else LINKTONODE=$(curl -G https://nodejs.org/dist/latest-v7.x/ | awk '{print $2}' | grep -P 'href=\"node-v7\.\d{1,}\.\d{1,}-linux-armv7l\.tar\.gz' | sed 's/href="//' | sed 's/<\/a>//' | sed 's/">.*//');
+else LINKTONODE=$(curl -G https://nodejs.org/dist/latest-v7.x/ | awk '{print $2}' | grep -P 'href=\"node-v7\.\d{1,}\.\d{1,}-linux-'$PICHIP'\.tar\.gz' | sed 's/href="//' | sed 's/<\/a>//' | sed 's/">.*//');
 # curl -G https://nodejs.org/dist/latest-v7.x/ | awk '{print $2}' | grep -P 'href=\"node-v7\.\d{1,}\.\d{1,}-linux-armv7l\.tar\.gz' | sed 's/href="//' | sed 's/<\/a>//' | sed 's/">.*//'
 NODEFOLDER=$(echo $LINKTONODE | sed 's/.tar.gz/\//');
 #Shell script created by @audstanley
