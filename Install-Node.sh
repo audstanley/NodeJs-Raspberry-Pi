@@ -7,7 +7,6 @@ else LINKTONODE=$(curl -G https://nodejs.org/dist/latest-v7.x/ | awk '{print $2}
 # curl -G https://nodejs.org/dist/latest-v7.x/ | awk '{print $2}' | grep -P 'href=\"node-v7\.\d{1,}\.\d{1,}-linux-armv7l\.tar\.gz' | sed 's/href="//' | sed 's/<\/a>//' | sed 's/">.*//'
 NODEFOLDER=$(echo $LINKTONODE | sed 's/.tar.gz/\//');
 #Shell script created by @audstanley
-#This will work specifically for a RaspberryPi 2/3 ARM7.
 #Next, Creates directory for downloads, and downloads node 7.x
 cd ~/ && mkdir tempNode && cd tempNode && wget https://nodejs.org/dist/latest-v7.x/$LINKTONODE;
 tar -xzf $LINKTONODE;
