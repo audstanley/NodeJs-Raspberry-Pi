@@ -1,4 +1,5 @@
 #!/bin/bash
+# written by Richard Stanley;
 PICHIP=$(uname -m);
 if [ "$EUID" -ne 0 ]
         then echo "You need to install as root by using sudo ./Install-Node.sh";
