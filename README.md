@@ -15,3 +15,5 @@ node -v;
 Please note that this should work for EVERY raspberry pi.
 
 As new integer versions of NodeJs come out, I will update the script.
+
+<script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script><script type ='text/javascript'>kofiwidget2.init('Buy Me a Coffee', '#46b798', 'A687KA8');kofiwidget2.draw();</script> 
