@@ -34,3 +34,5 @@ rm -R -f /root/tempNode/;
 #su pi;
 #cd ~/ && rm -R NodeJs-Raspberry-Pi-Arm7/;
 fi
+
+  
