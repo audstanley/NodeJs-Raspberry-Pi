@@ -31,4 +31,3 @@ sudo ln -s /opt/nodejs/bin/node /usr/bin/node; sudo ln -s /opt/nodejs/bin/node
 #su pi;
 #cd ~/ && rm -R NodeJs-Raspberry-Pi-Arm7/;
 fi
-   
