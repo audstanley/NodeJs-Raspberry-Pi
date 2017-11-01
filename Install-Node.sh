@@ -4,11 +4,11 @@ PICHIP=$(uname -m);
 if [ "$EUID" -ne 0 ]
         then echo "You need to install as root by using sudo ./Install-Node.sh";
         exit
-else LINKTONODE=$(curl -G https://nodejs.org/dist/latest-v8.x/ | awk '{print $2}' | grep -P 'href=\"node-v8\.\d{1,}\.\d{1,}-linux-'$PICHIP'\.tar\.gz' | sed 's/href="//' | sed 's/<\/a>//' | sed 's/">.*//');
-# curl -G https://nodejs.org/dist/latest-v7.x/ | awk '{print $2}' | grep -P 'href=\"node-v7\.\d{1,}\.\d{1,}-linux-armv7l\.tar\.gz' | sed 's/href="//' | sed 's/<\/a>//' | sed 's/">.*//'
+else LINKTONODE=$(curl -G https://nodejs.org/dist/latest-v9.x/ | awk '{print $2}' | grep -P 'href=\"node-v9\.\d{1,}\.\d{1,}-linux-'$PICHIP'\.tar\.gz' | sed 's/href="//' | sed 's/<\/a>//' | sed 's/">.*//');
+# curl -G https://nodejs.org/dist/latest-v9.x/ | awk '{print $2}' | grep -P 'href=\"node-v9\.\d{1,}\.\d{1,}-linux-armv9l\.tar\.gz' | sed 's/href="//' | sed 's/<\/a>//' | sed 's/">.*//'
 NODEFOLDER=$(echo $LINKTONODE | sed 's/.tar.gz/\//');
 #Next, Creates directory for downloads, and downloads node 8.x
-cd ~/ && mkdir tempNode && cd tempNode && wget https://nodejs.org/dist/latest-v8.x/$LINKTONODE;
+cd ~/ && mkdir tempNode && cd tempNode && wget https://nodejs.org/dist/latest-v9.x/$LINKTONODE;
 tar -xzf $LINKTONODE;
 #Remove the tar after extracing it.
 rm $LINKTONODE;
@@ -28,5 +28,5 @@ sudo ln -s /opt/nodejs/bin/npm /usr/sbin/npm; sudo ln -s /opt/nodejs/bin/npm /sb
 sudo ln -s /opt/nodejs/bin/npm /usr/local/bin/npm; 
 rm -R -f /root/tempNode/;
 #su pi;
-#cd ~/ && rm -R NodeJs-Raspberry-Pi-Arm7/;
+#cd ~/ && rm -R NodeJs-Raspberry-Pi-Arm9/;
 fi
