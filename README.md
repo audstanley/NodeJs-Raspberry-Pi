@@ -5,7 +5,6 @@ You can install everything on your pi by going into you Raspberry Pi zero|1|2|3'
 ```sh
 sudo su;
 wget -O - https://raw.githubusercontent.com/audstanley/NodeJs-Raspberry-Pi/master/Install-Node.sh | bash;
-exit;
 node -v;
 
 ```
