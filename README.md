@@ -1,5 +1,5 @@
 # NodeJs-Raspberry-Pi
-This is a simple shell script that will install NodeJs v9.x.  The "Latest version" of NodeJs version of 9.x in the raspberry pi on every version of raspberry pis (zero|1|2|3) <p>
+This is a simple shell script that will install NodeJs v9.x.  The "Latest version" of NodeJs version of 9.x in the raspberry pi on every version of raspberry pis (zero|1|2|3) This also happens to work on a Beaglebone and other ARM linux computers.<p>
 You can install everything on your pi by going into you Raspberry Pi zero|1|2|3's terminal, and running: <p>
 
 ```sh
