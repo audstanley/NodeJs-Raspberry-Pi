@@ -17,9 +17,9 @@ rm -R -f /opt/nodejs/;
 #remove symlinks
 rm /usr/bin/node /usr/sbin/node /sbin/node /sbin/node /usr/local/bin/node /usr/bin/npm /usr/sbin/npm /sbin/npm /usr/local/bin/npm 2> /dev/null;
 #This next line will copy Node over to the appropriate folder.
-mv /root/tempNode/$NODEFOLDER /opt/nodejs/;
+mv ~/tempNode/$NODEFOLDER /opt/nodejs/;
 #This line will remove the nodeJs tar we downloaded.
-rm -R -f /root/tempNode/$LINKTONODE/;
+rm -R -f ~/tempNode/$LINKTONODE/;
 #Create symlinks to node && npm
 sudo ln -s /opt/nodejs/bin/node /usr/bin/node; sudo ln -s /opt/nodejs/bin/node /usr/sbin/node; 
 sudo ln -s /opt/nodejs/bin/node /sbin/node; sudo ln -s /opt/nodejs/bin/node /usr/local/bin/node; 
