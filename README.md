@@ -3,11 +3,8 @@ This is a simple shell script that will install NodeJs v9.x.  The "Latest versio
 You can install everything on your pi by going into you Raspberry Pi zero|1|2|3's terminal, and running: <p>
 
 ```sh
-sudo su;
-wget -O - https://raw.githubusercontent.com/audstanley/NodeJs-Raspberry-Pi/master/Install-Node.sh | bash;
-exit;
-node -v;
-
+sudo wget -O - https://raw.githubusercontent.com/audstanley/NodeJs-Raspberry-Pi/master/Install-Node.sh | sudo bash
+node -v
 ```
 <p>
 
