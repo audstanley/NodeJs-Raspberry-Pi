@@ -24,4 +24,10 @@ rm -R -f ~/tempNode/$LINKTONODE/;
 update-alternatives --install "/usr/bin/node" "node" "/opt/nodejs/bin/node" 1
 update-alternatives --install "/usr/bin/npm" "npm" "/opt/nodejs/bin/npm" 1
 rm -R -f /root/tempNode/;
+
+# Get the python installer (for specific versions):
+cd /bin/;
+wget https://raw.githubusercontent.com/audstanley/NodeJs-Raspberry-Pi/master/node-install;
+chmod +x node-install;
+
 fi
