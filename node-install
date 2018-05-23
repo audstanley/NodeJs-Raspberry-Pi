@@ -211,11 +211,17 @@ def validVersionCheck(st):
             
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-v', '--version', '--install', '-i', help='Installs NodeJs.  Must pass in the version number\
- example: 4,5,6,7,8,9,10', action='store_true', required=True)
-parser.add_argument("version", type=str, action='store')
+parser.add_argument('-v', '--version', help='Installs the NodeJs version specified.  Must pass in the version number', action='store', required=False, dest='version')
+parser.add_argument("-a", '--automatic', action='store_true', help='Automaically installs the latest version of NodeJs', default=False, dest='automatic')
 args = parser.parse_args()
-printLogo()
-installDependencies()
-validVersionCheck(args.version)
+if args.version and not args.automatic:
+  printLogo()
+  installDependencies()
+  validVersionCheck(args.version)
+elif args.automatic and not args.version:
+  printLogo()
+  installDependencies()
+  installLatestVersion()
+else:
+    print("You cannot select a version: " + args.version + " and auto install the latest version at the same time.")
 
