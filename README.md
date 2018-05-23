@@ -16,7 +16,7 @@ exit
 <p>
 
 ## Specific Version of NodeJs:
-Once you have run the installer, you can install different versions at any time by opening a new terminal and typing:
+Once you have run the initial installer, you can install different versions at any time by opening a new terminal and typing:
 ```sh
 sudo node-install -v 4.9.1; # if you want to be specific
 ```
