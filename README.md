@@ -67,9 +67,6 @@ Please note that this will work for **EVERY raspberry pi**.
 
 If you have installed any *global* npm modules, and change your systems version of nodejs with **node-install** then **node-install** will reinstall your npm modules for you.
 
-As new integer versions of NodeJs come out, I will update the script.  I even wrote some NodeJs code that checks for integer updates every hour, and will send me a push notification to my phone, so this script should be up to date for a LONG time.  Here is that code:
-[checkNodeJsForLatestDistro](https://github.com/audstanley/checkNodeJsForLatestDistro)
-
 <a href='https://ko-fi.com/A687KA8' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi4.png?v=f' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 or stop by at my blog: [audstanley.com](http://www.audstanley.com)
