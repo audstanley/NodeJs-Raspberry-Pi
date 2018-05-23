@@ -212,7 +212,7 @@ def validVersionCheck(st):
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-v', '--version', '--install', '-i', help='Installs NodeJs.  Must pass in the version number\
- example: 0,1,2,3,4,5,6,7,8,9,10', action='store_true', required=True)
+ example: 4,5,6,7,8,9,10', action='store_true', required=True)
 parser.add_argument("version", type=str, action='store')
 args = parser.parse_args()
 printLogo()
