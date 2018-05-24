@@ -149,6 +149,16 @@ def InstallSpecificNodeVersion(v):
     for i,k in enumerate(oldGlobals):
       print(col.CYAN + "Reinstalling global npm modules: " + col.YELLOW + str(i+1) + ". " + col.DEFAULT + k)
       Popen([ 'npm', 'i', k, '-g' ], stdout=PIPE, stderr=PIPE).communicate()[0].decode('utf-8')
+    
+    try:
+      os.chdir('/opt/nodejs/bin/')
+      bins = os.listdir('./')
+      bins = list(filter(lambda x: x != 'node', bins))
+      bins = list(filter(lambda x: x != 'npm', bins))
+      for i,k in enumerate(bins):
+        Popen([ 'update-alternatives', '--install','/usr/bin/' + k, k,'/opt/nodejs/bin/' + k,'1' ], stdout=PIPE, stderr=PIPE).communicate()[0].decode('utf-8')
+    except:
+      pass
 
     # Delete the temporary files:
     Popen([ 'rm', '-R', '-f', upperFolderName ], stdout=PIPE, stderr=PIPE).communicate()[0].decode('utf-8')
