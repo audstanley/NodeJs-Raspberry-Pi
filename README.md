@@ -72,6 +72,21 @@ If you have installed any *global* npm modules, and change your systems version 
 or stop by at my blog: [audstanley.com](http://www.audstanley.com)
 
 
+## Always keep NodeJs up to date:
+
+If you want to keep your Raspberry Pi up to date with the Latest Version of Node at all times, edit  your **/etc/crontab** file:
+
+```bash
+sudo nano /etc/crontab
+```
+
+Add this line to the bottom of your crontab:
+
+```cron
+0 22 1,7,14,21 * * root node-install -a;
+```
+This will update your raspberry pi with the latest version of NodeJs on days 1st, 7st, 14th, and 21st of every month at 10:00pm.
+
 ## Thank you so much:
 
 [Phil](https://Ko-fi.com/home/coffeeshop?txid=ea3fc9e8-1e81-4198-a555-a595e3eeae76&mode=public&img=ogsomeoneboughtme)
