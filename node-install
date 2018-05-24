@@ -214,7 +214,6 @@ def installLatestVersion():
     m1 = list(map(lambda x : int(x), m1))
     mx = max(m1)
     req2 = requests.get('https://nodejs.org/dist/latest-v' + str(mx) + '.x/')
-    print(req2.text)
     regex2 = re.compile(r'<a href="node-v(\d{1,2}\.\d{1,2}\.\d{1,2})')
     r2 = re.search(regex2, req2.text)
     if r2:
