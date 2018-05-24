@@ -143,23 +143,18 @@ def InstallSpecificNodeVersion(v):
       '/usr/sbin/npm',
       '/sbin/npm',
       '/usr/local/bin/npm' ], stdout=PIPE, stderr=PIPE).communicate()[0].decode('utf-8')
-    
     Popen([ 'mv', folderName, '/opt/nodejs/' ], stdout=PIPE, stderr=PIPE).communicate()[0].decode('utf-8')
     Popen([ 'update-alternatives', '--install','/usr/bin/node','node','/opt/nodejs/bin/node','1' ], stdout=PIPE, stderr=PIPE).communicate()[0].decode('utf-8')
     Popen([ 'update-alternatives', '--install','/usr/bin/npm','npm','/opt/nodejs/bin/npm','1' ], stdout=PIPE, stderr=PIPE).communicate()[0].decode('utf-8')
-
     for i,k in enumerate(oldGlobals):
       print(col.CYAN + "Reinstalling global npm modules: " + col.YELLOW + str(i+1) + ". " + col.DEFAULT + k)
       Popen([ 'npm', 'i', k, '-g' ], stdout=PIPE, stderr=PIPE).communicate()[0].decode('utf-8')
 
     # Delete the temporary files:
     Popen([ 'rm', '-R', '-f', upperFolderName ], stdout=PIPE, stderr=PIPE).communicate()[0].decode('utf-8')
-
     print(col.YELLOW + "Installation is Complete." + col.DEFAULT)
-
   else:
     exit("You are not running this installer on an ARM based processor.")
-
 
 def validVersionCheck(st):
   regex = re.compile(r"(\d{1,2})\.?(\d{1,2})?\.?(\d{1,2})?")
@@ -208,14 +203,35 @@ def validVersionCheck(st):
               exit(col.RED + "That was not a valid number selection, Please input an integer from the list." + col.DEFAULT)
         except:
           exit(col.RED + "That was not a valid selection, Please input an integer from the list." + col.DEFAULT)
-            
+
+def installLatestVersion():
+  import requests
+  req1 = requests.get('https://nodejs.org/dist/')
+  regex1 = re.compile(r'<a href="latest-v(\d{1,2})')
+  r1 = re.search(regex1, req1.text)
+  if r1:
+    m1 = regex1.findall(req1.text)
+    m1 = list(map(lambda x : int(x), m1))
+    mx = max(m1)
+    req2 = requests.get('https://nodejs.org/dist/latest-v' + str(mx) + '.x/')
+    regex2 = re.compile(r'<a href="node-v(\d{1,2}\.\d{1,2}\.\d{1,2})')
+    r2 = re.search(regex2, req2.text)
+    if r2:
+      m2 = r2.group(1)
+      InstallSpecificNodeVersion(m2)
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-v', '--version', '--install', '-i', help='Installs NodeJs.  Must pass in the version number\
- example: 4,5,6,7,8,9,10', action='store_true', required=True)
-parser.add_argument("version", type=str, action='store')
+parser.add_argument('-v', '--version', help='Installs the NodeJs version specified.  Must pass in the version number', action='store', required=False, dest='version')
+parser.add_argument("-a", '--automatic', action='store_true', help='Automaically installs the latest version of NodeJs', default=False, dest='automatic')
 args = parser.parse_args()
-printLogo()
-installDependencies()
-validVersionCheck(args.version)
+if args.version and not args.automatic:
+  printLogo()
+  installDependencies()
+  validVersionCheck(args.version)
+elif args.automatic and not args.version:
+  printLogo()
+  installDependencies()
+  installLatestVersion()
+else:
+    print("You cannot select a version: " + args.version + " and auto install the latest version at the same time.")
 
