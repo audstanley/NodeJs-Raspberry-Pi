@@ -27,6 +27,7 @@ rm -R -f /root/tempNode/;
 
 # Get the python installer (for specific versions):
 cd /bin/;
+rm node-install;
 wget https://raw.githubusercontent.com/audstanley/NodeJs-Raspberry-Pi/master/node-install;
 chmod +x node-install;
 
