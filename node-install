@@ -155,7 +155,9 @@ def InstallSpecificNodeVersion(v):
       bins = os.listdir('./')
       bins = list(filter(lambda x: x != 'node', bins))
       bins = list(filter(lambda x: x != 'npm', bins))
+      print(c.CYAN + 'Binaries to Update: ' + c.DEFAULT + str(bins))
       for i,k in enumerate(bins):
+        print(c.CYAN + 'Adding Binaries: ' + c.YELLOW + str(i) '. ' + c.DEFAULT + k)
         Popen([ 'update-alternatives', '--install','/usr/bin/' + k, k,'/opt/nodejs/bin/' + k,'1' ], stdout=PIPE, stderr=PIPE).communicate()[0].decode('utf-8')
     except:
       pass
