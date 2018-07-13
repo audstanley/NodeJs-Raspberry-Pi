@@ -63,7 +63,7 @@ def installDependencies():
     o, e = Popen(['apt-get', 'update'], stdout=PIPE, stderr=PIPE).communicate()
     print(col.CYAN + "Need to install some dependencies, this may take a few minutes..." + col.DEFAULT)
     print(col.CYAN + "Installing Python Pip..." + col.DEFAULT)
-    o, e = Popen(['apt-get', 'install', 'python2-pip', '-y'], stdout=PIPE, stderr=PIPE).communicate()
+    o, e = Popen(['apt-get', 'install', 'python-pip', '-y'], stdout=PIPE, stderr=PIPE).communicate()
   if not checkForRequests():
     print(col.CYAN + "Installing Python Requests Library..." + col.DEFAULT)
     o, e = Popen(['pip', 'install', 'requests'], stdout=PIPE, stderr=PIPE).communicate()
