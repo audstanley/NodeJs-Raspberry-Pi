@@ -105,3 +105,6 @@ This will update your raspberry pi with the latest version of NodeJs on days 1st
   
 [Kryten0807](https://github.com/Kryten0807)
   
+## Traffic:
+
+Thank you for checking out the project, and using the node-install utility.  This github project (as of 2018), reaches about an average of 10,000 people every year.
