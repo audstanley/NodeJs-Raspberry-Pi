@@ -89,7 +89,7 @@ def checkForTheRequestsLibrary():
     try:
       import pip
     except ImportError:
-      o = Popen(['apt-get', 'install', 'python-pip'], stdout=PIPE, stderr=PIPE).communicate()[0].decode('utf-8')
+      o = Popen(['apt-get', 'install', 'python-pip', '-y'], stdout=PIPE, stderr=PIPE).communicate()[0].decode('utf-8')
     o = Popen(['pip', 'install', 'requests'], stdout=PIPE, stderr=PIPE).communicate()[0].decode('utf-8')
 
 def InstallSpecificNodeVersion(v):
