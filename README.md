@@ -101,7 +101,7 @@ This will update your raspberry pi with the latest version of NodeJs on days 1st
 
 ## Thank you ![](https://cdn2.iconfinder.com/data/icons/inverticons-fill-vol-2/32/bug_error_insect_ladybird-128.png) bug catchers:
 
-	[derpmarine168](https://github.com/derpmarine168)
+[derpmarine168](https://github.com/derpmarine168)
   
-  [Kryten0807](https://github.com/Kryten0807)
+[Kryten0807](https://github.com/Kryten0807)
   
