@@ -4,6 +4,7 @@
 import os
 if os.geteuid() != 0:
   exit("You need to run node-installer as root.")
+
 import re
 import imp
 import argparse
