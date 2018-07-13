@@ -98,3 +98,10 @@ This will update your raspberry pi with the latest version of NodeJs on days 1st
 [Bob](https://Ko-fi.com/home/coffeeshop?txid=98c46da8-45bb-478d-b44e-df9257b87edb&mode=public&img=ogsomeoneboughtme)
 
 [Anon](https://Ko-fi.com/home/coffeeshop?txid=e119b3ef-4171-4beb-a2dc-97d67bf09122&mode=public&img=ogsomeoneboughtme)
+
+## Thank you ![](https://cdn2.iconfinder.com/data/icons/inverticons-fill-vol-2/32/bug_error_insect_ladybird-128.png) bug catchers:
+
+	[derpmarine168](https://github.com/derpmarine168)
+  
+  [Kryten0807](https://github.com/Kryten0807)
+  
