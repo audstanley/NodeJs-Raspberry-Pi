@@ -67,7 +67,7 @@ or
 ```sh
 sudo node-install -v 11;
 # then you will get prompted with which 
-# specific version of 10 you wish to install
+# specific version of 11 you wish to install
 ```
 
 Please note that this will work for **EVERY raspberry pi**.
