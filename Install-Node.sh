@@ -4,8 +4,8 @@ PICHIP=$(uname -m);
 if [ "$EUID" -ne 0 ]
         then echo "You need to install as root by using sudo ./Install-Node.sh";
         exit
-else LINKTONODE=$(curl -sG https://nodejs.org/dist/latest-v10.x/ | awk '{print $2}' | grep -P 'href=\"node-v10\.\d{1,}\.\d{1,}-linux-'$PICHIP'\.tar\.gz' | sed 's/href="//' | sed 's/<\/a>//' | sed 's/">.*//');
-# curl -G https://nodejs.org/dist/latest-v10.x/ | awk '{print $2}' | grep -P 'href=\"node-v10\.\d{1,}\.\d{1,}-linux-armv10l\.tar\.gz' | sed 's/href="//' | sed 's/<\/a>//' | sed 's/">.*//'
+else LINKTONODE=$(curl -sG https://nodejs.org/dist/latest-v11.x/ | awk '{print $2}' | grep -P 'href=\"node-v11\.\d{1,}\.\d{1,}-linux-'$PICHIP'\.tar\.gz' | sed 's/href="//' | sed 's/<\/a>//' | sed 's/">.*//');
+# curl -G https://nodejs.org/dist/latest-v11.x/ | awk '{print $2}' | grep -P 'href=\"node-v11\.\d{1,}\.\d{1,}-linux-armv10l\.tar\.gz' | sed 's/href="//' | sed 's/<\/a>//' | sed 's/">.*//'
 NODEFOLDER=$(echo $LINKTONODE | sed 's/.tar.gz/\//');
 #Next, Creates directory for downloads, and downloads node 8.x
 cd ~/ && mkdir tempNode && cd tempNode && wget https://nodejs.org/dist/latest-v10.x/$LINKTONODE;
