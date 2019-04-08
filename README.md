@@ -96,6 +96,8 @@ This will update your raspberry pi with the latest version of NodeJs on days 1st
 
 ## Thank you so much:
 
+[Hansie](https://Ko-fi.com/home/coffeeshop?txid=d40b4253-995a-4bd7-9eea-e56bf463ddbe&mode=public&img=ogsomeoneboughtme)
+
 [Casper](https://Ko-fi.com/home/coffeeshop?txid=8504b181-2138-45e8-9a3a-66414828b024&mode=public&img=ogsomeoneboughtme)
 
 [Ladvien](https://Ko-fi.com/home/coffeeshop?txid=025faeb3-d715-4d0c-8cf9-ce0f7bf4e1bf&mode=public&img=ogsomeoneboughtme)
