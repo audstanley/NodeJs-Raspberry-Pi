@@ -4,7 +4,7 @@
 # NodeJs-Raspberry-Pi
 
 ## Latest NodeJS Install:
-This is a simple shell script that will install NodeJs v11.x.  The "Latest version" of NodeJs version of 10.x in the raspberry pi on every version of raspberry pis (zero|1|2|3) This also happens to work on a Beaglebone and other ARM6 or ARM7 linux computers.<p>
+This is a simple shell script that will install NodeJs v11.x.  The "Latest version" of NodeJs version of 11.x in the raspberry pi on every version of raspberry pis (zero|1|2|3) This also happens to work on a Beaglebone and other ARM6 or ARM7 linux computers.<p>
 
 >First, you will need to install the latest version of NodeJs on your pi by going into you Raspberry Pi zero|1|2|3's terminal, and running: <p>
 
