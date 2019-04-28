@@ -8,7 +8,7 @@ else LINKTONODE=$(curl -sG https://nodejs.org/dist/latest-v11.x/ | awk '{print $
 # curl -G https://nodejs.org/dist/latest-v11.x/ | awk '{print $2}' | grep -P 'href=\"node-v11\.\d{1,}\.\d{1,}-linux-armv10l\.tar\.gz' | sed 's/href="//' | sed 's/<\/a>//' | sed 's/">.*//'
 NODEFOLDER=$(echo $LINKTONODE | sed 's/.tar.gz/\//');
 #Next, Creates directory for downloads, and downloads node 8.x
-cd ~/ && mkdir tempNode && cd tempNode && wget https://nodejs.org/dist/latest-v10.x/$LINKTONODE;
+cd ~/ && mkdir tempNode && cd tempNode && wget https://nodejs.org/dist/latest-v11.x/$LINKTONODE;
 tar -xzf $LINKTONODE;
 #Remove the tar after extracing it.
 rm $LINKTONODE;
