@@ -78,6 +78,8 @@ or
 sudo node-install -v 12;
 # then you will get prompted with which 
 # specific version of 12 you wish to install
+# there is currently no build for the ARM6l, so you will have to
+# sudo node-install -v 11; # until they have an ARM6 build (only effects pi zeros, and pi1 models)
 ```
 
 Please note that this will work for **EVERY raspberry pi**.
