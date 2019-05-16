@@ -12,7 +12,7 @@ This is a simple shell script that will install NodeJs v11.x.  The "Latest versi
 wget -O - https://raw.githubusercontent.com/audstanley/NodeJs-Raspberry-Pi/master/Install-Node.sh | sudo bash
 node -v
 # if you get an error that node did not install, it is because currently there is no ARM6l build for node 12
-# (this only really effects the pi zero), but the node-install utility is there, so you can just sudo node-install -v 11
+# (this only really effects the pi zero, and pi-1), but the node-install utility is there, so you can just sudo node-install -v 11
 # for the time being
 exit
 ```
