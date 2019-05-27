@@ -126,7 +126,7 @@ This will update your raspberry pi with the latest version of NodeJs on days 1st
 
 ## Thank you ![](https://cdn4.iconfinder.com/data/icons/bug-fix/512/qa-quality-assurance-bug-15-128.png) (bug catchers)
 
-[derpmarine168](https://github.com/derpmarine168)
+[JoelEllis](https://github.com/JoelEllis)
   
 [Kryten0807](https://github.com/Kryten0807)
   
