@@ -10,6 +10,6 @@ rm node-install;
 wget https://raw.githubusercontent.com/audstanley/NodeJs-Raspberry-Pi/master/node-install;
 chmod +x node-install;
 if [ $PICHIP = "armv6l" ]; then /bin/node-install -v 11; fi; # because there is no ARM6 build for version 12.
-else node-install -a;
+else /bin/node-install -a;
 
 fi
