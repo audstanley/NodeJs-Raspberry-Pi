@@ -4,7 +4,7 @@
 # NodeJs-Raspberry-Pi
 
 ## Latest NodeJS Install:
-This is a simple shell script that will install NodeJs v12.x.  The "Latest version" of NodeJs version of 12.x in the raspberry pi on every version of raspberry pis (zero|1|2|3|4) This also happens to work on a Beaglebone, Nvidia TX2, and other ARM6, ARM7, and ARM64 linux computers.<p>  Please note that there is currently no arm6 build for node version 12, so you will get prompted to install the latest build of Node v11 if you are installing on a pi zero, or pi 1.  read (here)[https://github.com/audstanley/NodeJs-Raspberry-Pi/issues/22] for more information.
+This is a simple shell script that will install NodeJs v12.x.  The "Latest version" of NodeJs version of 12.x in the raspberry pi on every version of raspberry pis (zero|1|2|3|4) This also happens to work on a Beaglebone, Nvidia TX2, and other ARM6, ARM7, and ARM64 linux computers.<p>  Please note that there is currently no arm6 build for node version 12, so you will get prompted to install the latest build of Node v11 if you are installing on a pi zero, or pi 1.  read [here](https://github.com/audstanley/NodeJs-Raspberry-Pi/issues/22) for more information.
 
 >First, you will need to install the latest version of NodeJs on your pi by going into you Raspberry Pi zero|1|2|3's terminal, and running: <p>
 
