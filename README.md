@@ -12,8 +12,6 @@ Please note that there is currently no arm6 build for node version 12 or 13, so 
 
 ```sh
 wget -O - https://raw.githubusercontent.com/audstanley/NodeJs-Raspberry-Pi/master/Install-Node.sh | sudo bash
-node -v
-exit
 ```
 <p>
 
