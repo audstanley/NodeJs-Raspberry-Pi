@@ -11,7 +11,8 @@ Please note that there is currently no arm6 build for node version 12 or 13, so 
 >First, you will need to install the latest version of NodeJs on your pi by going into you Raspberry Pi zero|1|2|3's terminal, and running: <p>
 
 ```sh
-wget -O - https://raw.githubusercontent.com/audstanley/NodeJs-Raspberry-Pi/master/Install-Node.sh | sudo bash
+wget -O - https://raw.githubusercontent.com/audstanley/NodeJs-Raspberry-Pi/master/Install-Node.sh | sudo bash;
+node -v;
 ```
 <p>
 
