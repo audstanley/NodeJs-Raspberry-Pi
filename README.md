@@ -6,8 +6,6 @@
 ## Latest NodeJS Install:
 This is a simple shell script that will install NodeJs v13.x... or at least the "Latest version" of NodeJs available to your raspberry pi on every all types of raspberry pis (zero|1|2|3|4) This also happens to work on a Beaglebone, Nvidia TX2, and other ARM6, ARM7, and ARM64 linux computers.<p>  
 
-Please note that there is currently no arm6 build for node version 12 or 13, so you will get prompted to install the latest build of Node v11 if you are installing on a pi zero, or pi 1.  read [here](https://github.com/audstanley/NodeJs-Raspberry-Pi/issues/22) for more information.
-
 >First, you will need to install the latest version of NodeJs on your pi by going into you Raspberry Pi zero|1|2|3's terminal, and running: <p>
 
 ```sh
@@ -76,8 +74,6 @@ or
 sudo node-install -v 12;
 # then you will get prompted with which 
 # specific version of 12 you wish to install
-# there is currently no build for the ARM6l, so you will have to
-# sudo node-install -v 11; # until they have an ARM6 build (only effects pi zeros, and pi1 models)
 ```
 
 or
@@ -85,8 +81,6 @@ or
 sudo node-install -v 13;
 # then you will get prompted with which 
 # specific version of 13 you wish to install
-# there is currently no build for the ARM6l, so you will have to
-# sudo node-install -v 11; # until they have an ARM6 build (only effects pi zeros, and pi1 models)
 ```
 
 Please note that this will work for **EVERY raspberry pi**.
@@ -136,6 +130,8 @@ This will update your raspberry pi with the latest version of NodeJs on days 1st
 [JoelEllis](https://github.com/JoelEllis)
   
 [Kryten0807](https://github.com/Kryten0807)
+
+[fivdi](https://github.com/fivdi) for reporting that there are newer binaries of Node.
   
 ## Traffic:
 
