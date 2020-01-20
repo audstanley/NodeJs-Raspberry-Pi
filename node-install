@@ -100,7 +100,7 @@ def InstallSpecificNodeVersion(v):
   uname = uname.replace('\r','')
   if uname == 'armv7l' or uname == 'armv6l' or uname == 'arm64' or uname == 'aarch64':
     if uname == 'aarch64':
-      uname = 'arm64'
+      uname = 'armv7l'
     # Get a list of old global npm modules (if you were using node previously):
     oldGlobals = list()
     try:
