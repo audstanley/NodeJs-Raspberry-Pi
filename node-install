@@ -4,6 +4,7 @@
 import os
 if os.geteuid() != 0:
   exit("You need to run node-installer as root.")
+
 import re
 import imp
 import argparse
@@ -62,7 +63,7 @@ def installDependencies():
     o, e = Popen(['apt-get', 'update'], stdout=PIPE, stderr=PIPE).communicate()
     print(col.CYAN + "Need to install some dependencies, this may take a few minutes..." + col.DEFAULT)
     print(col.CYAN + "Installing Python Pip..." + col.DEFAULT)
-    o, e = Popen(['apt-get', 'install', 'python2-pip', '-y'], stdout=PIPE, stderr=PIPE).communicate()
+    o, e = Popen(['apt-get', 'install', 'python-pip', '-y'], stdout=PIPE, stderr=PIPE).communicate()
   if not checkForRequests():
     print(col.CYAN + "Installing Python Requests Library..." + col.DEFAULT)
     o, e = Popen(['pip', 'install', 'requests'], stdout=PIPE, stderr=PIPE).communicate()
@@ -88,7 +89,7 @@ def checkForTheRequestsLibrary():
     try:
       import pip
     except ImportError:
-      o = Popen(['apt-get', 'install', 'python-pip'], stdout=PIPE, stderr=PIPE).communicate()[0].decode('utf-8')
+      o = Popen(['apt-get', 'install', 'python-pip', '-y'], stdout=PIPE, stderr=PIPE).communicate()[0].decode('utf-8')
     o = Popen(['pip', 'install', 'requests'], stdout=PIPE, stderr=PIPE).communicate()[0].decode('utf-8')
 
 def InstallSpecificNodeVersion(v):
@@ -97,7 +98,9 @@ def InstallSpecificNodeVersion(v):
   uname = Popen(['uname', '-m'], stdout=PIPE, stderr=PIPE).communicate()[0].decode('utf-8')
   uname = uname.replace('\n','')
   uname = uname.replace('\r','')
-  if uname == 'armv7l' or uname == 'armv6l' or 'arm64':
+  if uname == 'armv7l' or uname == 'armv6l' or uname == 'arm64' or uname == 'aarch64':
+    if uname == 'aarch64':
+      uname = 'armv7l'
     # Get a list of old global npm modules (if you were using node previously):
     oldGlobals = list()
     try:
