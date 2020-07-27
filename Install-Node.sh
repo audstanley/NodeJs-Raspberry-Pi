@@ -8,9 +8,9 @@ then
 else 
         cd /bin/;
         rm node-install;
-        wget "https://raw.githubusercontent.com/audstanley/NodeJs-Raspberry-Pi/dev/build/node-install-"$PICHIP;
+        wget "https://raw.githubusercontent.com/audstanley/NodeJs-Raspberry-Pi/master/build/node-install-"$PICHIP;
         mv node-install-$PICHIP node-install
         chmod +x node-install;
         /bin/node-install -a;
- 
+
 fi
