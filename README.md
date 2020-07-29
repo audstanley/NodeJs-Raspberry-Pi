@@ -1,5 +1,5 @@
 
-<center> <img src="Node-Pi-ASCII.png"> </center>
+![Node Pi Gif](https://raw.githubusercontent.com/audstanley/NodeJs-Raspberry-Pi/master/node-pi-gif.gif)
 
 # NodeJs-Raspberry-Pi
 
