@@ -7,7 +7,6 @@ then
         exit
 else 
         cd /bin/;
-        rm node-install;
         wget "https://raw.githubusercontent.com/audstanley/NodeJs-Raspberry-Pi/master/build/node-install-"$PICHIP;
         mv node-install-$PICHIP node-install
         chmod +x node-install;
