@@ -92,8 +92,8 @@ func PrintLogo(wg *sync.WaitGroup) {
 
 }
 
-// RequestForArchetectureOfficial makes the GET request (as a concurrent waitgroup) for the archetecture passed and returns []NodeBigVersion struct
-func RequestForArchetectureOfficial(n *map[string]NodeElement, a7BigV *map[int][]int, latestVersionArm7 *int, w *sync.WaitGroup, arch *string) {
+// RequestForArchitectureOfficial makes the GET request (as a concurrent waitgroup) for the architecture passed and returns []NodeBigVersion struct
+func RequestForArchitectureOfficial(n *map[string]NodeElement, a7BigV *map[int][]int, latestVersionArm7 *int, w *sync.WaitGroup, arch *string) {
 	// defer the waitgroup, which will end at the end of the function.  This is for concurrency, and saves
 	// time to not make the https requests in series.
 	defer w.Done()
@@ -388,7 +388,7 @@ func SelectionDataFromUser(a7 *map[string]NodeElement, version *string) string {
 }
 
 // GetTheMostLatestVersionOfNodeJs will return the most up to date version of NodeJs
-func GetTheMostLatestVersionOfNodeJs(a7 *map[string]NodeElement, version *string, archetecture *string) string {
+func GetTheMostLatestVersionOfNodeJs(a7 *map[string]NodeElement, version *string, architecture *string) string {
 	versionMatched, _ := strconv.Atoi(regexp.MustCompile(`^([0-9]+)$`).FindStringSubmatch(*version)[1])
 	var populatedVersions []NodeElement
 
@@ -407,27 +407,27 @@ func GetTheMostLatestVersionOfNodeJs(a7 *map[string]NodeElement, version *string
 
 }
 
-// RunInstallation will take the specific version number of NodeJs, and install for the appropriate archetecture
-func RunInstallation(n *map[string]NodeElement, version *string, archetecture *string) string {
+// RunInstallation will take the specific version number of NodeJs, and install for the appropriate architecture
+func RunInstallation(n *map[string]NodeElement, version *string, architecture *string) string {
 	if val, ok := (*n)[*version]; ok {
 		link := val.A7Link
-		if *archetecture == "armv6l" {
+		if *architecture == "armv6l" {
 			link = val.A6Link
 		}
 		colorize(ColorGreen, "Downloading: "+link)
-		err := DownloadFile("/tmp/node-v"+*version+"-linux-"+*archetecture+".tar.gz", link)
+		err := DownloadFile("/tmp/node-v"+*version+"-linux-"+*architecture+".tar.gz", link)
 
 		if err != nil {
 			log.Println(err)
 			os.Exit(1)
 		}
 
-		f, _ := os.Open("/tmp/node-v" + *version + "-linux-" + *archetecture + ".tar.gz")
+		f, _ := os.Open("/tmp/node-v" + *version + "-linux-" + *architecture + ".tar.gz")
 		defer f.Close()
-		colorize(ColorGreen, "Untaring: "+"/tmp/node-v"+*version+"-linux-"+*archetecture+".tar.gz")
-		Untar("/tmp/node-v"+*version+"-linux-"+*archetecture, f)
+		colorize(ColorGreen, "Untaring: "+"/tmp/node-v"+*version+"-linux-"+*architecture+".tar.gz")
+		Untar("/tmp/node-v"+*version+"-linux-"+*architecture, f)
 		colorize(ColorGreen, "Copying files over to the appropriate location, and creating symlinks")
-		err = CopyDirectory("/tmp/node-v"+*version+"-linux-"+*archetecture+"/node-v"+*version+"-linux-"+*archetecture, "/opt/nodejs")
+		err = CopyDirectory("/tmp/node-v"+*version+"-linux-"+*architecture+"/node-v"+*version+"-linux-"+*architecture, "/opt/nodejs")
 
 		if err != nil {
 			colorize(ColorRed, "There was a problem with making a copy of the nodeJs directory: node-v"+*version)
@@ -446,9 +446,9 @@ func RunInstallation(n *map[string]NodeElement, version *string, archetecture *s
 		os.Chdir(currentDir)
 
 	} else {
-		colorize(ColorRed, *version+" is not an available version for NodeJs on "+*archetecture)
+		colorize(ColorRed, *version+" is not an available version for NodeJs on "+*architecture)
 	}
-	return "/tmp/node" + *version + "-linux-" + *archetecture
+	return "/tmp/node" + *version + "-linux-" + *architecture
 
 }
 
@@ -489,13 +489,13 @@ func main() {
 	// The compiler will work with the "-tags arm" argument that we assign to go build.
 	// so "go build -tags arm", will use the arm.go file's function for the arrayToString function,
 	// and go build (with no tag argument) will use the x64.go version of the arrayToString function.
-	// There is a difference in the way the CPU archetecture deals with ascii integer values (as a [65]uint8 - unsigned, and not a [65]int8).
-	archetecture := arrayToString(uname.Machine)
+	// There is a difference in the way the CPU architecture deals with ascii integer values (as a [65]uint8 - unsigned, and not a [65]int8).
+	architecture := arrayToString(uname.Machine)
 
-	if archetecture == "x86_64" {
-		archetecture = "x64"
-	} else if archetecture == "aarch64" {
-		archetecture = "arm64"
+	if architecture == "x86_64" {
+		architecture = "x64"
+	} else if architecture == "aarch64" {
+		architecture = "arm64"
 	}
 
 	nodeJsSymlinks := []string{"/usr/bin/node", "/usr/bin/nodejs", "/usr/lib/nodejs", "/usr/sbin/node", "/sbin/node", "/sbin/node", "/usr/local/bin/node", "/usr/bin/npm", "/usr/sbin/npm", "/sbin/npm", "/usr/local/bin/npm", "/usr/bin/node_modules"}
@@ -524,17 +524,17 @@ func main() {
 		go deleteFile(&nodeJsSymlinks[i], &wg)
 	}
 	go deleteFolder(&nodeJsDirectory, &wg)
-	go RequestForArchetectureOfficial(&a7, &a7BigV, &latestVersionArm7, &wg, &archetecture) // Making the body requests as a concurrent task
+	go RequestForArchitectureOfficial(&a7, &a7BigV, &latestVersionArm7, &wg, &architecture) // Making the body requests as a concurrent task
 	go RequestForArm6Unofficial(&a6, &a6BigV, &latestVersionArm6, &wg)                      // Making the body requests as a concurrent task
 	wg.Wait()
 
-	colorize(ColorGreen, "Obtaining NodeJs for archetecture: "+archetecture)
+	colorize(ColorGreen, "Obtaining NodeJs for architecture: "+architecture)
 	flag.Parse()
 
-	// If the archetecture is arm6, we are going to use the a7 map of elements, but overwrite the links in the NodeElement.A6Link
+	// If the architecture is arm6, we are going to use the a7 map of elements, but overwrite the links in the NodeElement.A6Link
 	// This way, official builds up to version 12 will be installed for arm6, and unofficial builds will be installed for versions 12+
 	// Ultimately, this will add arm6 support for the pi zero for as long as the unofficial builds are released.
-	if archetecture == "armv6l" {
+	if architecture == "armv6l" {
 
 		for key := range a6 {
 			a7[key] = a6[key]
@@ -544,7 +544,7 @@ func main() {
 
 	if *version != "" && regexp.MustCompile(`^[0-9]+$`).MatchString(*version) && !(*latest) {
 		selection := SelectionDataFromUser(&a7, version)
-		tmpFile := RunInstallation(&a7, &selection, &archetecture)
+		tmpFile := RunInstallation(&a7, &selection, &architecture)
 		tarFile := tmpFile + ".tar.gz"
 		nodeDownloadedFolder := tmpFile + "/"
 		wgCount = 2 + len(nodeAndNpmSymlinks)
@@ -558,7 +558,7 @@ func main() {
 		colorize(ColorGreen, "👍 good to go 👍")
 
 	} else if *version != "" && regexp.MustCompile(`^[0-9]+\.[0-9]+\.[0-9]+$`).MatchString(*version) && !(*latest) {
-		tmpFile := RunInstallation(&a7, version, &archetecture)
+		tmpFile := RunInstallation(&a7, version, &architecture)
 		tarFile := tmpFile + ".tar.gz"
 		nodeDownloadedFolder := tmpFile + "/"
 		wgCount = 2 + len(nodeAndNpmSymlinks)
@@ -574,9 +574,9 @@ func main() {
 		// install the latest version of NodeJs
 		colorize(ColorGreen, "Installing latest version of NodeJs")
 		latestVersion := strconv.Itoa(latestVersionArm7)
-		latestVersionAsString := GetTheMostLatestVersionOfNodeJs(&a7, &latestVersion, &archetecture)
+		latestVersionAsString := GetTheMostLatestVersionOfNodeJs(&a7, &latestVersion, &architecture)
 		colorize(ColorGreen, "  version: "+latestVersionAsString)
-		tmpFile := RunInstallation(&a7, &latestVersionAsString, &archetecture)
+		tmpFile := RunInstallation(&a7, &latestVersionAsString, &architecture)
 		tarFile := tmpFile + ".tar.gz"
 		nodeDownloadedFolder := tmpFile + "/"
 		wgCount = 2 + len(nodeAndNpmSymlinks)
