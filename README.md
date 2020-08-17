@@ -2,6 +2,7 @@
 ![forks](https://img.shields.io/github/forks/audstanley/NodeJs-Raspberry-Pi?style=for-the-badge)
 ![source-code](https://img.shields.io/github/languages/code-size/audstanley/NodeJs-Raspberry-Pi?style=for-the-badge)
 ![issues](https://img.shields.io/github/issues/audstanley/NodeJs-Raspberry-Pi?style=for-the-badge)
+![concurrency](https://img.shields.io/badge/Now%20with-concurrency-green?style=for-the-badge&logo=appveyor)
 
 ![Node Pi Gif](https://raw.githubusercontent.com/audstanley/NodeJs-Raspberry-Pi/master/node-pi-gif.gif)
 
