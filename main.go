@@ -501,7 +501,7 @@ func main() {
 	nodeJsSymlinks := []string{"/usr/bin/node", "/usr/bin/nodejs", "/usr/lib/nodejs", "/usr/sbin/node", "/sbin/node", "/sbin/node", "/usr/local/bin/node", "/usr/bin/npm", "/usr/sbin/npm", "/sbin/npm", "/usr/local/bin/npm", "/usr/bin/node_modules"}
 	updateAlternatives := "/usr/bin/update-alternatives"
 	nodeAndNpmSymlinks := [][]string{
-		{"--install", "/usr/bin/node", "node", "/opt/nodejs/bin/node", "1"}
+		{"--install", "/usr/bin/node", "node", "/opt/nodejs/bin/node", "1"},
 	}
 	nodeJsDirectory := "/opt/nodejs/"
 
