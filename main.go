@@ -436,7 +436,13 @@ func RunInstallation(n *map[string]NodeElement, version *string, architecture *s
 		}
 
 		err = CopyDirectory("/opt/nodejs/lib/node_modules", "/usr/lib/node_modules")
+		if err != nil {
+			fmt.Println(err)
+		}
 		err = CopyFile("/opt/nodejs/bin/node", "/usr/bin/node")
+		if err != nil {
+			fmt.Println(err)
+		}
 		currentDir, _ := os.Getwd()
 		os.Chdir("/usr/bin")
 		exec.Command("ln", "-sf", "../lib/node_modules/npm/bin/npm", "/usr/bin/npm").Run()
