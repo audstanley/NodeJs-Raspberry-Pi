@@ -500,21 +500,9 @@ func main() {
 
 	nodeJsSymlinks := []string{"/usr/bin/node", "/usr/bin/nodejs", "/usr/lib/nodejs", "/usr/sbin/node", "/sbin/node", "/sbin/node", "/usr/local/bin/node", "/usr/bin/npm", "/usr/sbin/npm", "/sbin/npm", "/usr/local/bin/npm", "/usr/bin/node_modules"}
 	updateAlternatives := "/usr/bin/update-alternatives"
-	// nodeAndNpmSymlinks := [][]string{
-	// 	{"--install", "/usr/bin/node", "node", "/opt/nodejs/bin/node", "1"},
-	// 	{"--install", "/usr/bin/npm", "npm", "/opt/nodejs/lib/node_modules/npm/bin/npm", "1"},
-	// 	{"--install", "/usr/bin/npm-cli.js", "npm-cli.js", "/opt/nodejs/lib/node_modules/npm/bin/npm-cli.js", "1"},
-	// 	{"--install", "/usr/bin/npx", "npx", "/opt/nodejs/lib/node_modules/npm/bin/npx", "1"},
-	// 	{"--install", "/usr/bin/npx-cli.js", "npx-cli.js", "/opt/nodejs/lib/node_modules/npm/bin/npx-cli.js", "1"},
-	// }
 	nodeAndNpmSymlinks := [][]string{
-		{"--install", "/usr/bin/node", "node", "/opt/nodejs/bin/node", "1"},
-		// {"--install", "/usr/bin/npm", "npm", "../lib/node_modules/npm/bin/npm", "1"},
-		// {"--install", "/usr/bin/npm-cli.js", "npm-cli.js", "../lib/node_modules/npm/bin/npm-cli.js", "1"},
-		// {"--install", "/usr/bin/npx", "npx", "../lib/node_modules/npm/bin/npx", "1"},
-		// {"--install", "/usr/bin/npx-cli.js", "npx-cli.js", "../lib/node_modules/npm/bin/npx-cli.js", "1"},
+		{"--install", "/usr/bin/node", "node", "/opt/nodejs/bin/node", "1"}
 	}
-
 	nodeJsDirectory := "/opt/nodejs/"
 
 	wgCount := 4 + len(nodeJsSymlinks)
