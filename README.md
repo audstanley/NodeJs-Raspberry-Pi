@@ -1,3 +1,7 @@
+![stars](https://img.shields.io/github/stars/audstanley/NodeJs-Raspberry-Pi?style=for-the-badge)
+![forks](https://img.shields.io/github/forks/audstanley/NodeJs-Raspberry-Pi?style=for-the-badge)
+![source-code](https://img.shields.io/github/languages/code-size/audstanley/NodeJs-Raspberry-Pi?style=for-the-badge)
+![issues](https://img.shields.io/github/issues/audstanley/NodeJs-Raspberry-Pi?style=for-the-badge)
 
 ![Node Pi Gif](https://raw.githubusercontent.com/audstanley/NodeJs-Raspberry-Pi/master/node-pi-gif.gif)
 
