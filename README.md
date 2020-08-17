@@ -4,6 +4,8 @@
 ![issues](https://img.shields.io/github/issues/audstanley/NodeJs-Raspberry-Pi?style=for-the-badge)
 ![concurrency](https://img.shields.io/badge/Now%20with-concurrency-green?style=for-the-badge&logo=appveyor)
 
+![go-report-card](https://goreportcard.com/badge/github.com/audstanley/NodeJs-Raspberry-Pi)
+
 ![Node Pi Gif](https://raw.githubusercontent.com/audstanley/NodeJs-Raspberry-Pi/master/node-pi-gif.gif)
 
 # NodeJs-Raspberry-Pi
