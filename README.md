@@ -155,3 +155,7 @@ Thank you for checking out the project, and using the node-install utility.  Thi
 ## Development
 
 If you would like to develop for this project, Just install [VSCode with Docker as a Dependency (follow this guide)](https://code.visualstudio.com/docs/remote/containers), and the VSCode extensions [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) and [Remote - Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) then git clone the project, open the project in VSCode, Ctrl Shift P, "Open Folder in Container" then ./build.sh to build the binaries for all the archetectures. You will need [WSL2](https://docs.docker.com/docker-for-windows/wsl/) if you are on windows.
+
+## Stargazers
+
+[![Stargazers over time](https://starchart.cc/audstanley/NodeJs-Raspberry-Pi.svg)](https://starchart.cc/audstanley/NodeJs-Raspberry-Pi)
