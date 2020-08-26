@@ -139,6 +139,8 @@ This will update your raspberry pi with the latest version of NodeJs on days 1st
 
 [Anon](https://Ko-fi.com/home/coffeeshop?txid=e119b3ef-4171-4beb-a2dc-97d67bf09122&mode=public&img=ogsomeoneboughtme)
 
+[Jeff](https://Ko-fi.com/home/coffeeshop?txid=62a200f6-2d06-4c47-bf27-a17cb0d786a6&mode=public&img=ogsomeoneboughtme)
+
 ## Thank you ![](https://cdn4.iconfinder.com/data/icons/bug-fix/512/qa-quality-assurance-bug-15-128.png) (bug catchers)
 
 [JoelEllis](https://github.com/JoelEllis)
