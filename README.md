@@ -97,6 +97,13 @@ sudo node-install -v 14;
 # specific version of 14 you wish to install
 ```
 
+or
+```sh
+sudo node-install -v 15;
+# then you will get prompted with which 
+# specific version of 15 you wish to install
+```
+
 Please note that this will work for **EVERY raspberry pi**.
 
 If you have installed any *global* npm modules, and change your systems version of nodejs with **node-install** then **node-install** will reinstall your npm modules for you.
