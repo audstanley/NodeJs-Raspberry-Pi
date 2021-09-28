@@ -1,10 +1,11 @@
+//go:build arm
 // +build arm
 
 package main
 
 import "strings"
 
-func arrayToString(x [65]uint8) string {
+func ArrayToString(x [65]uint8) string {
 	var buf [65]byte
 	for i, b := range x {
 		buf[i] = byte(b)
