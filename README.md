@@ -13,7 +13,7 @@
 ## Latest NodeJS Install:
 This is a simple shell script that will install the "Latest version" of NodeJs available to your raspberry pi on every all types of raspberry pis (zero|1|2|3|4) This also happens to work on a Beaglebone, Nvidia TX2, and other ARM6, ARM7, ARM64 and x86_64 linux computers.<p>  
 
-I have yet to confirm, but [there may be an issue on Jessy, if you are running the older pi OS](https://github.com/audstanley/NodeJs-Raspberry-Pi/issues/30)
+I have yet to confirm, but [there may be an issue on Jessy and Stretch, if you are running the older pi OS](https://github.com/audstanley/NodeJs-Raspberry-Pi/issues/30)
 
 >First, you will need to install the latest version of NodeJs on your pi by going into your Raspberry Pi zero|1|2|3's terminal, and running: <p>
 
