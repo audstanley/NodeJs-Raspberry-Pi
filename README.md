@@ -114,7 +114,7 @@ sudo node-install -v 16;
 ```
 
 
-Please note that this will work for **EVERY raspberry pi**.
+Please note that this will work for **EVERY raspberry pi** running buster or greater.
 
 If you have installed any *global* npm modules, and change your systems version of nodejs with **node-install** then **node-install** will reinstall your npm modules for you.
 
