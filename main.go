@@ -21,6 +21,8 @@ import (
 	"strings"
 	"sync"
 	"syscall"
+
+	"github.com/audstanley/NodeJs-Raspberry-Pi/rpistringsarray"
 )
 
 // The Color object is to pretty print in the linux terminal.
@@ -491,12 +493,12 @@ func main() {
 	var uname syscall.Utsname
 	syscall.Uname(&uname)
 
-	// When cross compiling for arm, we need to use a slightly different ArrayToString function.
+	// When cross compiling for arm, we need to use a slightly different rpistringsarray.ArrayToString function.
 	// The compiler will work with the "-tags arm" argument that we assign to go build.
-	// so "go build -tags arm", will use the arm.go file's function for the ArrayToString function,
-	// and go build (with no tag argument) will use the x64.go version of the ArrayToString function.
+	// so "go build -tags arm", will use the arm.go file's function for the rpistringsarray.ArrayToString function,
+	// and go build (with no tag argument) will use the x64.go version of the rpistringsarray.ArrayToString function.
 	// There is a difference in the way the CPU architecture deals with ascii integer values (as a [65]uint8 - unsigned, and not a [65]int8).
-	architecture := ArrayToString(uname.Machine)
+	architecture := rpistringsarray.ArrayToString(uname.Machine)
 
 	if architecture == "x86_64" {
 		architecture = "x64"
