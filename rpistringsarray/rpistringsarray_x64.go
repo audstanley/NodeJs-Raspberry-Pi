@@ -5,6 +5,9 @@ package rpistringsarray
 
 import "strings"
 
+// This function allows calling uname -m on the operating system
+// and uses int8 as an argument, which is needed to convert a
+// int8 array to string. see https://pkg.go.dev/syscall#Utsname
 func ArrayToString(x [65]int8) string {
 	var buf [65]byte
 	for i, b := range x {

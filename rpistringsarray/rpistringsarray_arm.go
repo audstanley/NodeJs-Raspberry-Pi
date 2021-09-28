@@ -5,6 +5,10 @@ package rpistringsarray
 
 import "strings"
 
+// This function allows calling uname -m on the operating system
+// and uses uint8 as an argument, which is needed to convert a
+// uint8 array to string (specifically for arm6/7).
+// see https://pkg.go.dev/syscall#Utsname
 func ArrayToString(x [65]uint8) string {
 	var buf [65]byte
 	for i, b := range x {
