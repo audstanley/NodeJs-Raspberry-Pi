@@ -31,12 +31,12 @@ type Color string
 // Declaring the color codes for linux terminal
 const (
 	ColorBlack  Color = "\u001b[30m"
-	ColorRed          = "\u001b[31m"
-	ColorGreen        = "\u001b[32m"
-	ColorCyan         = "\u001b[36m"
-	ColorYellow       = "\u001b[33m"
-	ColorBlue         = "\u001b[34m"
-	ColorReset        = "\u001b[0m"
+	ColorRed    Color = "\u001b[31m"
+	ColorGreen  Color = "\u001b[32m"
+	ColorCyan   Color = "\u001b[36m"
+	ColorYellow Color = "\u001b[33m"
+	ColorBlue   Color = "\u001b[34m"
+	ColorReset  Color = "\u001b[0m"
 )
 
 // NodeElement stores the full version path as well as the direct link to the download
@@ -123,7 +123,11 @@ func RequestForArchitectureOfficial(n *map[string]NodeElement, a7BigV *map[int][
 		smallV, _ := strconv.Atoi(v[4])
 
 		if bigV != 0 {
-			(*n)[link] = NodeElement{bigV, medV, smallV, `https://nodejs.org/dist/v` + link + `/node-v` + link + `-linux-` + *arch + `.tar.gz`, `https://nodejs.org/dist/v` + link + `/node-v` + link + `-linux-armv6l.tar.gz`, -1}
+			(*n)[link] = NodeElement{bigV, medV, smallV,
+				`https://nodejs.org/dist/v` + link + `/node-v` +
+					link + `-linux-` + *arch + `.tar.gz`,
+				`https://nodejs.org/dist/v` + link +
+					`/node-v` + link + `-linux-armv6l.tar.gz`, -1}
 			(*a7BigV)[bigV] = append((*a7BigV)[bigV], medV)
 			if *latestVersionArm7 < bigV {
 				*latestVersionArm7 = bigV
@@ -133,7 +137,8 @@ func RequestForArchitectureOfficial(n *map[string]NodeElement, a7BigV *map[int][
 }
 
 // RequestForArm6Unofficial makes the GET request (as a concurrent waitgroup) for ARM6 processors and returns []NodeBigVersion struct
-func RequestForArm6Unofficial(n *map[string]NodeElement, a6BigV *map[int][]int, latestVersionArm6 *int, w *sync.WaitGroup) {
+func RequestForArm6Unofficial(n *map[string]NodeElement,
+	a6BigV *map[int][]int, latestVersionArm6 *int, w *sync.WaitGroup) {
 	// defer the waitgroup, which will end at the end of the function.  This is for concurrency, and saves
 	// time to not make the https requests in series.
 	defer w.Done()
@@ -162,7 +167,9 @@ func RequestForArm6Unofficial(n *map[string]NodeElement, a6BigV *map[int][]int, 
 
 		// For ARM6, we only need versions 12 and above for the unofficial releases
 		if bigV >= 12 {
-			(*n)[link] = NodeElement{bigV, medV, smallV, ``, `https://unofficial-builds.nodejs.org/download/release/v` + link + `/node-v` + link + `-linux-armv6l.tar.gz`, -1}
+			(*n)[link] = NodeElement{bigV, medV, smallV, ``,
+				`https://unofficial-builds.nodejs.org/download/release/v` +
+					link + `/node-v` + link + `-linux-armv6l.tar.gz`, -1}
 			(*a6BigV)[bigV] = append((*a6BigV)[bigV], medV)
 			if *latestVersionArm6 < bigV {
 				*latestVersionArm6 = bigV
@@ -170,11 +177,6 @@ func RequestForArm6Unofficial(n *map[string]NodeElement, a6BigV *map[int][]int, 
 		}
 	}
 
-}
-
-func deleteTheNodeJsDirectory(w *sync.WaitGroup) {
-	defer w.Done()
-	os.RemoveAll("/opt/nodejs/")
 }
 
 func deleteFolder(folder *string, w *sync.WaitGroup) {
