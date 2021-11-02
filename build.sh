@@ -1,4 +1,7 @@
 #!/bin/bash
+# We are getting GLIBC errors, and 
+# we should remove our dependency on CGO
+CGO_ENABLED=0
 GOHOSTARCH=amd64
 GOHOSTOS=linux
 GOOS=linux
