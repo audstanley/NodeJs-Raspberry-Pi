@@ -120,6 +120,12 @@ sudo node-install -v 17;
 # specific version of 17 you wish to install
 ```
 
+  or
+```sh
+sudo node-install -v 18;
+# then you will get prompted with which 
+# specific version of 18 you wish to install
+```
 
 Please note that this will work for **EVERY raspberry pi** running buster or greater.
 
