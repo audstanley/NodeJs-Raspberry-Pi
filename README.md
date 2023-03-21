@@ -11,7 +11,7 @@
 # NodeJs-Raspberry-Pi
 
 ## Latest NodeJS Install:
-This is a simple shell script that will install the "Latest version" of NodeJs available to your raspberry pi on every all types of raspberry pis (zero|1|2|3|4) This also happens to work on a Beaglebone, Nvidia TX2, and other ARM6, ARM7, ARM64 and x86_64 linux computers.<p>  
+This is a simple shell script that will install the latest version of NodeJs available to your raspberry pi on every all types of raspberry pis (zero|1|2|3|4) This also happens to work on other ARM6, ARM7, ARM64 and x86_64 linux computers.<p>  
 
 I have yet to confirm, but [there may be an issue on Jessy and Stretch, if you are running the older pi OS](https://github.com/audstanley/NodeJs-Raspberry-Pi/issues/30)
 
@@ -125,6 +125,12 @@ sudo node-install -v 17;
 sudo node-install -v 18;
 # then you will get prompted with which 
 # specific version of 18 you wish to install
+```
+  
+```sh
+sudo node-install -v 19;
+# then you will get prompted with which 
+# specific version of 19 you wish to install
 ```
 
 Please note that this will work for **EVERY raspberry pi** running buster or greater.
