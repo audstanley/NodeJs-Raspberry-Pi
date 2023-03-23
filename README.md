@@ -34,13 +34,13 @@ sudo node-install -v 4;
 # then you will get prompted with which 
 # specific version of 4 you wish to install
 ```
-or
+
 ```sh
 sudo node-install -v 5;
 # then you will get prompted with which 
 # specific version of 5 you wish to install
 ```
-or
+
 ```sh
 sudo node-install -v 6;
 # then you will get prompted with which 
@@ -77,7 +77,6 @@ sudo node-install -v 11;
 # specific version of 11 you wish to install
 ```
 
-or
 ```sh
 sudo node-install -v 12;
 # then you will get prompted with which 
@@ -96,7 +95,6 @@ sudo node-install -v 14;
 # specific version of 14 you wish to install
 ```
 
-or
 ```sh
 sudo node-install -v 15;
 # then you will get prompted with which 
