@@ -28,7 +28,7 @@ Once you have run the initial installer, you can install different versions at a
 ```sh
 sudo node-install -v 4.9.1; # if you want to be specific
 ```
-or
+
 ```sh
 sudo node-install -v 4;
 # then you will get prompted with which 
@@ -46,32 +46,31 @@ sudo node-install -v 6;
 # then you will get prompted with which 
 # specific version of 6 you wish to install
 ```
-or
+
 ```sh
 sudo node-install -v 7;
 # then you will get prompted with which 
 # specific version of 7 you wish to install
 ```
-or
+
 ```sh
 sudo node-install -v 8;
 # then you will get prompted with which 
 # specific version of 8 you wish to install
 ```
-or
+
 ```sh
 sudo node-install -v 9;
 # then you will get prompted with which 
 # specific version of 9 you wish to install
 ```
-or
+
 ```sh
 sudo node-install -v 10;
 # then you will get prompted with which 
 # specific version of 10 you wish to install
 ```
 
-or
 ```sh
 sudo node-install -v 11;
 # then you will get prompted with which 
@@ -85,14 +84,12 @@ sudo node-install -v 12;
 # specific version of 12 you wish to install
 ```
 
-or
 ```sh
 sudo node-install -v 13;
 # then you will get prompted with which 
 # specific version of 13 you wish to install
 ```
 
-or
 ```sh
 sudo node-install -v 14;
 # then you will get prompted with which 
@@ -106,21 +103,18 @@ sudo node-install -v 15;
 # specific version of 15 you wish to install
 ```
 
-or
 ```sh
 sudo node-install -v 16;
 # then you will get prompted with which 
 # specific version of 16 you wish to install
 ```
   
-or
 ```sh
 sudo node-install -v 17;
 # then you will get prompted with which 
 # specific version of 17 you wish to install
 ```
 
-  or
 ```sh
 sudo node-install -v 18;
 # then you will get prompted with which 
