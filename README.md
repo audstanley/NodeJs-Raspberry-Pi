@@ -131,6 +131,12 @@ sudo node-install -v 20;
 # specific version of 20 you wish to install
 ```
 
+```sh
+sudo node-install -v 21;
+# then you will get prompted with which 
+# specific version of 21 you wish to install
+```
+
 Please note that this will work for **EVERY raspberry pi** running buster or greater.
 
 <a href='https://ko-fi.com/A687KA8' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi4.png?v=f' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
