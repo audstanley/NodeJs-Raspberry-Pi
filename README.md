@@ -137,6 +137,24 @@ sudo node-install -v 21;
 # specific version of 21 you wish to install
 ```
 
+```sh
+sudo node-install -v 22;
+# then you will get prompted with which 
+# specific version of 22 you wish to install
+```
+
+```sh
+sudo node-install -v 23;
+# then you will get prompted with which 
+# specific version of 23 you wish to install
+```
+
+```sh
+sudo node-install -v 24;
+# then you will get prompted with which 
+# specific version of 24 you wish to install
+```
+
 Please note that this will work for **EVERY raspberry pi** running buster or greater.
 
 <a href='https://ko-fi.com/A687KA8' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi4.png?v=f' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
@@ -196,6 +214,5 @@ Thank you for checking out the project, and using the node-install utility.  Thi
 
 If you would like to develop for this project, Just install [VSCode with Docker as a Dependency (follow this guide)](https://code.visualstudio.com/docs/remote/containers), and the VSCode extensions [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) and [Remote - Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) then git clone the project, open the project in VSCode, Ctrl Shift P, "Open Folder in Container" then ./build.sh to build the binaries for all the archetectures. You will need [WSL2](https://docs.docker.com/docker-for-windows/wsl/) if you are on windows.
 
-## Stargazers
-
-[![Stargazers over time](https://starchart.cc/audstanley/NodeJs-Raspberry-Pi.svg)](https://starchart.cc/audstanley/NodeJs-Raspberry-Pi)
+## Star History Chart
+[![Star History Chart](https://api.star-history.com/chart?repos=audstanley/nodejs-raspberry-pi&type=timeline&legend=bottom-right)](https://www.star-history.com/?repos=audstanley%2Fnodejs-raspberry-pi&type=timeline&legend=bottom-right)
